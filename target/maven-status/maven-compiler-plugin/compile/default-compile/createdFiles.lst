@@ -1,0 +1,16 @@
+com\assessment\member\security\UnauthorizedEntryPoint.class
+com\assessment\member\entities\Member.class
+com\assessment\member\security\JwtTokenUtil.class
+com\assessment\member\security\RefreshTokenRequest.class
+com\assessment\member\security\SecurityConfig.class
+com\assessment\member\security\JwtResponse.class
+com\assessment\member\repositories\MemberRepository.class
+com\assessment\member\security\JwtUserDetailsService.class
+com\assessment\member\repositories\UserRepository.class
+com\assessment\member\security\JwtRequestFilter.class
+com\assessment\member\controllers\AuthController.class
+com\assessment\member\entities\User.class
+com\assessment\member\controllers\UserController.class
+com\assessment\member\controllers\MemberController.class
+com\assessment\member\security\JwtRequest.class
+com\assessment\member\MemberApplication.class
