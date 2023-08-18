@@ -117,11 +117,11 @@ public class MemberController {
     public ResponseEntity<List<Member>> findMember(@RequestBody Member memberToFind) {
 
     	List<Member> members = new ArrayList<Member>();
-    	if(memberToFind.getName()!= null &&  memberToFind.getName().isEmpty()) {
-    			members = memberRepository.findByNameAndVip(memberToFind.getName(),"N");
+    	if(memberToFind.getName() == null ||  memberToFind.getName().isEmpty()) {
+    		return new ResponseEntity<>(members,HttpStatus.BAD_REQUEST);
     	} else {
-    		
-         	return new ResponseEntity<>(members,HttpStatus.BAD_REQUEST);
+    		members = memberRepository.findByNameAndVip(memberToFind.getName(),"N");
+         	
     	}
     	if(!members.isEmpty()) {
     		return new ResponseEntity<>(members, HttpStatus.OK);
@@ -136,7 +136,7 @@ public class MemberController {
     public ResponseEntity<List<Member>> findVipMember(@RequestBody Member memberToFind) {
 
     	List<Member> members = new ArrayList<Member>();
-    	if(memberToFind.getName()!= null &&  memberToFind.getName().isEmpty()) {
+    	if(memberToFind.getName() != null &&  !(memberToFind.getName().isEmpty())) {
     			members = memberRepository.findByNameAndVip(memberToFind.getName(),"Y");
     	} else {
     		
